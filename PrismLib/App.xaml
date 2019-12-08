@@ -8,5 +8,6 @@
             mc:Ignorable="d"
             x:Class="PrismLib.App">
     <prism:PrismApplication.Resources>
+        <Color x:Key="AppColor">#41A4EC</Color>
     </prism:PrismApplication.Resources>
 </prism:PrismApplication>

@@ -4,6 +4,12 @@
              x:Class="PrismLib.Views.MainPage"
              Title="{Binding Title}"
              Visual="Material">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="DOC"
+                     Command="{Binding DocCommand}"/>
+        <ToolbarItem Text="INFO"
+                     Command="{Binding AppInfoCommand}"/>
+    </ContentPage.ToolbarItems>
     <CollectionView x:Name="Root"
                     ItemsSource="{Binding MenuCollection}"
                     SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"

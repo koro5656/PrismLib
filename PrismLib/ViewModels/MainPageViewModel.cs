@@ -3,6 +3,8 @@ using System.Collections.ObjectModel;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using PrismLib.Views;
+using Xamarin.Essentials;
 
 namespace PrismLib.ViewModels
 {
@@ -11,6 +13,11 @@ namespace PrismLib.ViewModels
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
+        /// <summary>
+        /// PrismドキュメントURL
+        /// </summary>
+        readonly string url = @"https://prismlibrary.github.io/docs/index.html";
+
         /// <summary>
         /// ページダイアログサービス
         /// </summary>
@@ -30,7 +37,14 @@ namespace PrismLib.ViewModels
         /// メニューコレクション
         /// </summary>
         public ObservableCollection<MenuListItem> MenuCollection { get; private set; }
-
+        /// <summary>
+        /// ドキュメントコマンド
+        /// </summary>
+        public DelegateCommand DocCommand { get; private set; }
+        /// <summary>
+        /// アプリケーション情報コマンド
+        /// </summary>
+        public DelegateCommand AppInfoCommand { get; private set; }
         /// <summary>
         /// メニュー選択コマンド
         /// </summary>
@@ -51,6 +65,8 @@ namespace PrismLib.ViewModels
             {
                 new MenuListItem(1,"テスト","テストの説明", DateTime.Now, true)
             };
+            DocCommand = new DelegateCommand(ShowDocumentPage);
+            AppInfoCommand = new DelegateCommand(ShowAppInfoPage);
             MenuSelectCommand = new DelegateCommand<MenuListItem>(SelectedMenu);
         }
 
@@ -61,6 +77,22 @@ namespace PrismLib.ViewModels
         {
             _PageDialogService = null;
             base.Destroy();
+        }
+
+        /// <summary>
+        /// ドキュメントページ表示
+        /// </summary>
+        void ShowDocumentPage()
+        {
+            Browser.OpenAsync(url, BrowserLaunchMode.SystemPreferred);
+        }
+
+        /// <summary>
+        /// アプリケーション情報ページ表示
+        /// </summary>
+        void ShowAppInfoPage()
+        {
+            NavigationService.NavigateAsync(nameof(AppInfoPage));
         }
 
         /// <summary>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrismLib.Views.AppInfoPage"
+             Title="{Binding Title}">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid BackgroundColor="{StaticResource AppColor}"
+              Padding="0,10"
+              Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Text="バージョン情報"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        </Grid>
+        <Label Text="PrismLib"
+               Margin="5,0"
+               Grid.Row="1" Grid.Column="0"/>
+        <Label Text="{Binding PrismLibVersion}"
+               Grid.Row="1" Grid.Column="1"/>
+        <Label Text="Xamarin.Forms"
+               Margin="5,0"
+               Grid.Row="2" Grid.Column="0"/>
+        <Label Text="{Binding XamarinFormsVersion}"
+               Grid.Row="2" Grid.Column="1"/>
+        <Label Text="Prism.Unity.Forms"
+               Margin="5,0"
+               Grid.Row="3" Grid.Column="0"/>
+        <Label Text="{Binding PrismUnityFormsVersion}"
+               Grid.Row="3" Grid.Column="1"/>
+    </Grid>
+</ContentPage>

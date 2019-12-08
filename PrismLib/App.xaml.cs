@@ -30,6 +30,7 @@ namespace PrismLib
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<AppInfoPage, AppInfoPageViewModel>();
         }
 
         protected override void OnStart()
