@@ -5,8 +5,8 @@
              Title="{Binding Title}"
              Visual="Material">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="DOC"
-                     Command="{Binding DocCommand}"/>
+        <ToolbarItem Text="git"
+                     Command="{Binding GitCommand}"/>
         <ToolbarItem Text="INFO"
                      Command="{Binding AppInfoCommand}"/>
     </ContentPage.ToolbarItems>

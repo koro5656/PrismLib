@@ -36,7 +36,7 @@ namespace PrismLib.ViewModels
         /// 画面遷移完了前に実行される
         /// </summary>
         /// <param name="parameters">画面遷移パラメータ</param>
-        public void Initialize(INavigationParameters parameters)
+        public virtual void Initialize(INavigationParameters parameters)
         {
         }
 

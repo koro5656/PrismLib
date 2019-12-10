@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bhvr="clr-namespace:PrismLib.Behaviors"
+             x:Class="PrismLib.Views.WebViewPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="back.png"
+            Command="{Binding GoBackCommand}"/>
+       <ToolbarItem
+            IconImageSource="forward.png"
+            Command="{Binding GoForwardCommand}"/>
+        <ToolbarItem
+            IconImageSource="reload.png"
+            Command="{Binding ReloadCommand}"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <WebView Source="{Binding WebViewSource}">
+            <WebView.Behaviors>
+                <bhvr:WebViewBehavior
+                    IsBack="{Binding IsBack, Mode=OneWayToSource}"
+                    IsForward="{Binding IsForward, Mode=OneWayToSource}"
+                    IsLoading="{Binding IsLoading, Mode=OneWayToSource}"
+                    GoBackCommand="{Binding GoBackCommand, Mode=OneWayToSource}"
+                    GoForwardCommand="{Binding GoForwardCommand, Mode=OneWayToSource}"
+                    ReloadCommand="{Binding ReloadCommand, Mode=OneWayToSource}"/>
+            </WebView.Behaviors>
+        </WebView>
+    </Grid>
+</ContentPage>

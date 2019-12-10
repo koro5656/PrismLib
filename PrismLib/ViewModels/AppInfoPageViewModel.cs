@@ -1,4 +1,5 @@
 ﻿using Prism.Navigation;
+using Xamarin.Essentials;
 
 namespace PrismLib.ViewModels
 {
@@ -27,7 +28,7 @@ namespace PrismLib.ViewModels
         public AppInfoPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "アプリケーション情報";
-            PrismLibVersion = "0.0.0.1";
+            PrismLibVersion = AppInfo.VersionString;
             XamarinFormsVersion = "4.3.0.991221";
             PrismUnityFormsVersion = "7.2.0.1422";
         }

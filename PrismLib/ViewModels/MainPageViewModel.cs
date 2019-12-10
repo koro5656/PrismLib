@@ -14,9 +14,9 @@ namespace PrismLib.ViewModels
     public class MainPageViewModel : ViewModelBase
     {
         /// <summary>
-        /// PrismドキュメントURL
+        /// GitURL
         /// </summary>
-        readonly string url = @"https://prismlibrary.github.io/docs/index.html";
+        readonly string url = @"https://github.com/koro5656/PrismLib";
 
         /// <summary>
         /// ページダイアログサービス
@@ -38,9 +38,9 @@ namespace PrismLib.ViewModels
         /// </summary>
         public ObservableCollection<MenuListItem> MenuCollection { get; private set; }
         /// <summary>
-        /// ドキュメントコマンド
+        /// Gitコマンド
         /// </summary>
-        public DelegateCommand DocCommand { get; private set; }
+        public DelegateCommand GitCommand { get; private set; }
         /// <summary>
         /// アプリケーション情報コマンド
         /// </summary>
@@ -63,9 +63,9 @@ namespace PrismLib.ViewModels
             Title = "PrismLib";
             MenuCollection = new ObservableCollection<MenuListItem>
             {
-                new MenuListItem(1,"テスト","テストの説明", DateTime.Now, true)
+                new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, true)
             };
-            DocCommand = new DelegateCommand(ShowDocumentPage);
+            GitCommand = new DelegateCommand(ShowDocumentPage);
             AppInfoCommand = new DelegateCommand(ShowAppInfoPage);
             MenuSelectCommand = new DelegateCommand<MenuListItem>(SelectedMenu);
         }
@@ -80,7 +80,7 @@ namespace PrismLib.ViewModels
         }
 
         /// <summary>
-        /// ドキュメントページ表示
+        /// Gitページ表示
         /// </summary>
         void ShowDocumentPage()
         {
@@ -106,7 +106,17 @@ namespace PrismLib.ViewModels
                 return;
             }
 
-            _PageDialogService.DisplayAlertAsync("PrismLib", "テスト選択", "OK");
+            var naviParams = new NavigationParameters();
+            switch (item.Id)
+            {
+                case 1:
+                    naviParams.Add(WebViewPageViewModel.ParameterKey_Title, "Prism Template Pack");
+                    naviParams.Add(WebViewPageViewModel.ParameterKey_Url, @"https://github.com/koro5656/PrismUnityForm-for-mac");
+                    NavigationService.NavigateAsync(nameof(WebViewPage), naviParams);
+                    break;
+                default:
+                    break;
+            }
 
             // 選択を解除
             SelectedMenuItem = null;
