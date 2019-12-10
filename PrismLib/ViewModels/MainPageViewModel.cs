@@ -63,7 +63,8 @@ namespace PrismLib.ViewModels
             Title = "PrismLib";
             MenuCollection = new ObservableCollection<MenuListItem>
             {
-                new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, true)
+                new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, true),
+                new MenuListItem(2,"INotifyPropertyChanged","INotifyPropertyChangedについて説明します。", DateTime.Now, true),
             };
             GitCommand = new DelegateCommand(ShowDocumentPage);
             AppInfoCommand = new DelegateCommand(ShowAppInfoPage);
@@ -113,6 +114,9 @@ namespace PrismLib.ViewModels
                     naviParams.Add(WebViewPageViewModel.ParameterKey_Title, "Prism Template Pack");
                     naviParams.Add(WebViewPageViewModel.ParameterKey_Url, @"https://github.com/koro5656/PrismUnityForm-for-mac");
                     NavigationService.NavigateAsync(nameof(WebViewPage), naviParams);
+                    break;
+                case 2:
+                    NavigationService.NavigateAsync(nameof(NotifyPropertyChangedPage), naviParams);
                     break;
                 default:
                     break;
