@@ -4,7 +4,7 @@
              x:Class="PrismLib.Views.CommandPage"
              Title="{Binding Title}"
              Visual="Material">
-    <Grid Margin="10,10,10,30">
+    <Grid Padding="10,10,10,30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
