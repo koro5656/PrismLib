@@ -65,6 +65,7 @@ namespace PrismLib.ViewModels
             {
                 new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, true),
                 new MenuListItem(2,"INotifyPropertyChanged","INotifyPropertyChangedについて説明します。", DateTime.Now, true),
+                new MenuListItem(3,"Command","Commandについて説明します。", DateTime.Now, true),
             };
             GitCommand = new DelegateCommand(ShowDocumentPage);
             AppInfoCommand = new DelegateCommand(ShowAppInfoPage);
@@ -117,6 +118,9 @@ namespace PrismLib.ViewModels
                     break;
                 case 2:
                     NavigationService.NavigateAsync(nameof(NotifyPropertyChangedPage), naviParams);
+                    break;
+                case 3:
+                    NavigationService.NavigateAsync(nameof(CommandPage), naviParams);
                     break;
                 default:
                     break;

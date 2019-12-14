@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrismLib.Views.CommandPage"
+             Title="{Binding Title}"
+             Visual="Material">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Text="Submit1 (CanExecuteなし)"
+                Command="{Binding Submit1Command}"
+                Grid.Row="0"/>
+        <StackLayout Grid.Row="1">
+            <Button Text="Submit2 (CanExecuteあり)"
+                    Command="{Binding Submit2Command}"/>
+            <StackLayout Orientation="Horizontal" Margin="0,-10,0,0">
+                <CheckBox IsChecked="{Binding CanExecute2, Mode=TwoWay}"/>
+                <Label Text="CanExecute" Margin="-20,0,0,0" VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

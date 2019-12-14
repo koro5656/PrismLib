@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismLib.iOS", "PrismLib.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismLib", "PrismLib\PrismLib.csproj", "{2CCAAC83-02FA-4A15-9B49-F516301889AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D1002A2-59EE-402F-9CA0-D26232D2A62D}"
+	ProjectSection(SolutionItems) = preProject
+		CommandPage.xaml = CommandPage.xaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

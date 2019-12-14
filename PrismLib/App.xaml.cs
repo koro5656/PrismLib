@@ -33,6 +33,7 @@ namespace PrismLib
             containerRegistry.RegisterForNavigation<WebViewPage, WebViewPageViewModel>();
             containerRegistry.RegisterForNavigation<AppInfoPage, AppInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<NotifyPropertyChangedPage, NotifyPropertyChangedPageViewModel>();
+            containerRegistry.RegisterForNavigation<CommandPage, CommandPageViewModel>();
         }
 
         protected override void OnStart()
