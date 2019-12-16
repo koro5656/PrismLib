@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Prism.Mvvm;
 using Prism.Unity;
 using PrismLib.ViewModels;
 using PrismLib.Views;
@@ -34,6 +35,14 @@ namespace PrismLib
             containerRegistry.RegisterForNavigation<AppInfoPage, AppInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<NotifyPropertyChangedPage, NotifyPropertyChangedPageViewModel>();
             containerRegistry.RegisterForNavigation<CommandPage, CommandPageViewModel>();
+            containerRegistry.RegisterForNavigation<CompositeCommandPage, CompositeCommandPageViewModel>();
+            containerRegistry.RegisterForNavigation<CompositeCommandTabbedPage, CompositeCommandTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<CompositeCommand1TabPage, CompositeCommand1TabPageViewModel>();
+            containerRegistry.RegisterForNavigation<CompositeCommand2TabPage, CompositeCommand2TabPageViewModel>();
+
+            containerRegistry.Register<CompositeCommand1View>();
+            containerRegistry.Register<CompositeCommand2View>();
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
 
         protected override void OnStart()

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrismLib.Views.CompositeCommandPage"
+             Title="{Binding Title}"
+             Visual="Material">
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="TabButtonStyle">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid Padding="10,10,10,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Text="Save All"
+                Command="{Binding ApplicationCommands.SaveCommand1}"
+                Margin="0,0,0,10" Padding="0,5"
+                WidthRequest="100"/>
+        <StackLayout Orientation="Horizontal"
+                     Grid.Row="1">
+            <Button Text="View1"
+                    Command="{Binding View1NavigationCommand}"
+                    Style="{StaticResource TabButtonStyle}" />
+            <Button Text="View2"
+                    Command="{Binding View2NavigationCommand}"
+                    Style="{StaticResource TabButtonStyle}" />
+        </StackLayout>
+        <ContentView Content="{Binding View}"
+                     Grid.Row="2"/>
+        <Button Text="Navigation"
+                Command="{Binding NavigationCommand}"
+                Grid.Row="3"/>
+    </Grid>
+</ContentPage>

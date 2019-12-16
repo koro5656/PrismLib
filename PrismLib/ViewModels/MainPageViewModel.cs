@@ -63,9 +63,10 @@ namespace PrismLib.ViewModels
             Title = "PrismLib";
             MenuCollection = new ObservableCollection<MenuListItem>
             {
-                new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, true),
-                new MenuListItem(2,"INotifyPropertyChanged","INotifyPropertyChangedについて説明します。", DateTime.Now, true),
-                new MenuListItem(3,"Command","Commandについて説明します。", DateTime.Now, true),
+                new MenuListItem(1,"Prism Template Pack","Prism Template Packのインストール方法について説明します。", DateTime.Now, false),
+                new MenuListItem(2,"INotifyPropertyChanged","INotifyPropertyChangedについて説明します。", DateTime.Now, false),
+                new MenuListItem(3,"Command","Commandについて説明します。", DateTime.Now, false),
+                new MenuListItem(4,"CompositeCommand","CompositeCommandについて説明します。", DateTime.Now, true),
             };
             GitCommand = new DelegateCommand(ShowDocumentPage);
             AppInfoCommand = new DelegateCommand(ShowAppInfoPage);
@@ -121,6 +122,9 @@ namespace PrismLib.ViewModels
                     break;
                 case 3:
                     NavigationService.NavigateAsync(nameof(CommandPage), naviParams);
+                    break;
+                case 4:
+                    NavigationService.NavigateAsync(nameof(CompositeCommandPage), naviParams);
                     break;
                 default:
                     break;
